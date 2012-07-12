@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	Hello World
+<?php	echo $body; ?>
 </body>
 
 </html>

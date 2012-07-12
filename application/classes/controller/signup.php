@@ -6,7 +6,8 @@ class Controller_Signup extends Controller {
 	{
 		$user=Auth::instance()->get_user();
 		if($user){
-			$this->response->body(View::factory('templates/signedin'));
+			$body=View::factory('viewer');
+			$this->response->body(View::factory('templates/signedin')->set('body',$body));
 		}
 		else{
 			$body=View::factory('connect');
