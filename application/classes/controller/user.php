@@ -28,7 +28,22 @@ class Controller_User extends Controller {
 				$movies_url='https://graph.facebook.com/'.$fb_id.'/movies?access_token='.$access_token;
 				$json_data=Curl::get($movies_url);
 				$php_data=json_decode($json_data);
-				
+				$movie_likes=$php_data->data;
+				foreach($movie_likes as $data){
+					$item=ORM::factory('item',$data->id);
+					if(!$item->loaded()){
+						$item->id=$data->id;
+						$item->name=$data->name;
+						$item->category=$data->category;
+						$item->save();	
+					}
+					$useritem=ORM::factory('useritem');
+					$useritem->user_id=$fb_id;
+					$useritem->item_id=$data->id;
+					$useritem->created_time=$data->created_time;
+					$useritem->save();
+					
+				}
 				$this->response->body($json_data);
 			}
 		}

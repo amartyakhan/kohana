@@ -5,7 +5,7 @@ class Controller_Signup extends Controller {
 	public function action_index()
 	{
 		$user=Auth::instance()->get_user();
-		if($user->loaded()){
+		if($user){
 			$this->response->body(View::factory('templates/signedin'));
 		}
 		else{
