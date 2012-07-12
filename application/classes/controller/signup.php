@@ -4,7 +4,15 @@ class Controller_Signup extends Controller {
 
 	public function action_index()
 	{
-		$this->response->body('This is a signup page');
+		$user=Auth::instance()->get_user();
+		if($user->loaded()){
+			$this->response->body(View::factory('templates/signedin'));
+		}
+		else{
+			$body=View::factory('connect');
+			$this->response->body(View::factory('templates/default')->set('body',$body));
+		}
+		
 	}
 
 } // End Welcome

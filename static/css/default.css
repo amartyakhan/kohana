@@ -1,0 +1,17 @@
+.transbox
+  {
+  height:180px;
+  width:500px;
+  margin:30px;
+  border:1px solid black;
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.5); /* rgb, white, with alpha at 0.5 */
+
+  padding:30px;
+  font-family: 'Allerta', sans-serif;
+  }
+  
+.transbox h1
+  {
+  color: #123456;
+  }
