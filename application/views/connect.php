@@ -35,9 +35,9 @@
 	                                alert("sorry, something went wrong!");
 	                                },
 	                                success: function(html) {
-	                                	alert(html);
+	                                	//alert(html);
 	                                    if(html=='Signed In'){
-	                                    	alert('Signed In');
+	                                    	//alert('Signed In');
 	                                    	window.location=window.location;
 	                                    }
 	                                }                                       

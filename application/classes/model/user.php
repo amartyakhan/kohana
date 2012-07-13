@@ -27,4 +27,6 @@ class Model_User extends Model_Auth_User {
  
 		return $array;
 	}
+	
+	protected $_has_many=array('useritems'=>array());
 }

@@ -302,3 +302,13 @@ error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify faile
 --
 #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main}
+2012-07-12 23:48:23 --- ERROR: ErrorException [ 8 ]: Use of undefined constant url - assumed 'url' ~ APPPATH\classes\controller\signup.php [ 14 ]
+2012-07-12 23:48:23 --- STRACE: ErrorException [ 8 ]: Use of undefined constant url - assumed 'url' ~ APPPATH\classes\controller\signup.php [ 14 ]
+--
+#0 C:\wamp\www\kohana\application\classes\controller\signup.php(14): Kohana_Core::error_handler(8, 'Use of undefine...', 'C:\wamp\www\koh...', 14, Array)
+#1 [internal function]: Controller_Signup->action_index()
+#2 C:\wamp\www\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Signup))
+#3 C:\wamp\www\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 C:\wamp\www\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 C:\wamp\www\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
